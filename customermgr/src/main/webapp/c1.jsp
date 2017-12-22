@@ -5,7 +5,7 @@
 <%@ page import="com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer" %>
 
 <%
-    System.out.println("now in Customermgr index.jsp");
+    System.out.println("now in Customermgr c1.jsp");
     new Customer1().c1();
 %>
 
