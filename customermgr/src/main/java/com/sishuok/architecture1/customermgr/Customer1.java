@@ -8,4 +8,8 @@ public class Customer1 {
         new Base1().base1("customer1 invoke=====");
         System.out.println("now in Customer1====");
     }
+
+    public static void main(String[] args) {
+
+    }
 }

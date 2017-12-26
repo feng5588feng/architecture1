@@ -24,10 +24,22 @@
             <type>war</type>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>com.sishuok</groupId>
+            <artifactId>cartmgr</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.sishuok</groupId>
+            <artifactId>ordermgr</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.sishuok</groupId>
+            <artifactId>storemgr</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
         </dependency>
     </dependencies>
     <build>
@@ -47,10 +59,21 @@
                             <groupId>com.sishuok</groupId>
                             <artifactId>goodsmgrweb</artifactId>
                         </overlay>
+                        <overlay>
+                            <groupId>com.sishuok</groupId>
+                            <artifactId>cartmgr</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>com.sishuok</groupId>
+                            <artifactId>ordermgr</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>com.sishuok</groupId>
+                            <artifactId>storemgr</artifactId>
+                        </overlay>
                     </overlays>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>
