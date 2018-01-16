@@ -1,25 +1,30 @@
 package com.sishuok.architecture1.customermgr.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.sishuok.architecture1.customermgr.service.ICustomerService;
 import com.sishuok.architecture1.customermgr.vo.CustomerModel;
 import com.sishuok.architecture1.customermgr.vo.CustomerQueryModel;
 import com.sishuok.pageutil.Page;
 import com.sishuok.util.format.DateFormatHelper;
 import com.sishuok.util.json.JsonHelper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(value="/customer")
 public class CustomerController {
 	@Autowired
 	private ICustomerService ics = null;
-	
+
 	@RequestMapping(value="toAdd",method=RequestMethod.GET)
 	public String toAdd(){
-		
+
 		return "customer/add";
 	}
 	@RequestMapping(value="add",method=RequestMethod.POST)
@@ -56,24 +61,24 @@ public class CustomerController {
 		if(wm.getQueryJsonStr()==null || wm.getQueryJsonStr().trim().length()==0){
 			cqm =  new CustomerQueryModel();
 		}else{
-			cqm = (CustomerQueryModel) JsonHelper.str2Object(wm.getQueryJsonStr(), CustomerQueryModel.class);
+			cqm = (CustomerQueryModel)JsonHelper.str2Object(wm.getQueryJsonStr(), CustomerQueryModel.class);
 		}
-		
+
 		cqm.getPage().setNowPage(wm.getNowPage());
 		if(wm.getPageShow() > 0){
 			cqm.getPage().setPageShow(wm.getPageShow());
 		}
-		
+
 		Page dbPage = ics.getByConditionPage(cqm);
-		
+
 		//
 		model.addAttribute("wm", wm);
 		model.addAttribute("page", dbPage);
-				
+
 		return "customer/list";
 	}
 	@RequestMapping(value="toQuery",method=RequestMethod.GET)
 	public String toQuery(){
 		return "customer/query";
-	}	
+	}
 }
