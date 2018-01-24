@@ -3,11 +3,11 @@
   
 <mapper namespace="com.sishuok.architecture1.ordermgr.dao.OrderDAO">  
      <insert id="create" parameterType="OM">
-     	insert into tbl_order (customerUuid,orderTime,totalMoney,saveMoney ,state) 
-     	 values(#{customerUuid},#{orderTime},#{totalMoney},#{saveMoney },#{state})
+     	insert into tbl_order (customerUuid,orderTime,totalMoney,saveMoney,state) 
+     	 values(#{customerUuid},#{orderTime},#{totalMoney},#{saveMoney},#{state})
      </insert>
      <update id="update" parameterType="OM">
-     	update tbl_order set customerUuid=#{customerUuid},orderTime=#{orderTime},totalMoney=#{totalMoney},saveMoney =#{saveMoney },state=#{state}
+     	update tbl_order set customerUuid=#{customerUuid},orderTime=#{orderTime},totalMoney=#{totalMoney},saveMoney=#{saveMoney},state=#{state}
      	   	where uuid=#{uuid}
      </update>
      <delete id="delete" parameterType="int">
@@ -23,9 +23,7 @@
         	<if test="uuid!=null &amp;&amp; uuid > 0">
         		and uuid=#{uuid}
         	</if>  
-        	<if test="orderTime!=null &amp;&amp; orderTime!=''">
-        		and orderTime=#{orderTime}
-        	</if>
+        	
         </where>
     </select> 
 </mapper>

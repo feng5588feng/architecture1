@@ -6,7 +6,7 @@ public class OrderModel extends BaseModel{
 	private Integer customerUuid;
 	private String orderTime;
 	private Float totalMoney;
-	private Float saveMoney ;
+	private Float saveMoney;
 	private Integer state;
 	
 	public void setCustomerUuid(Integer obj){
@@ -30,11 +30,11 @@ public class OrderModel extends BaseModel{
 		return this.totalMoney;
 	}
 	
-	public void setSaveMoney (Float obj){
-		this.saveMoney  = obj;
+	public void setSaveMoney(Float obj){
+		this.saveMoney = obj;
 	}
-	public Float getSaveMoney (){
-		return this.saveMoney ;
+	public Float getSaveMoney(){
+		return this.saveMoney;
 	}
 	
 	public void setState(Integer obj){
@@ -47,6 +47,6 @@ public class OrderModel extends BaseModel{
 	
 	
 	public String toString(){
-		return "Model"+this.getClass().getName()+"[customerUuid=" + this.getCustomerUuid() + ",orderTime=" + this.getOrderTime() + ",totalMoney=" + this.getTotalMoney() + ",saveMoney =" + this.getSaveMoney () + ",state=" + this.getState() + ",]";
+		return "Model"+this.getClass().getName()+"[customerUuid=" + this.getCustomerUuid() + ",orderTime=" + this.getOrderTime() + ",totalMoney=" + this.getTotalMoney() + ",saveMoney=" + this.getSaveMoney() + ",state=" + this.getState() + ",]";
 	}	
 }
