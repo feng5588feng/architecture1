@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-恭喜你，操作成功！store.
+恭喜你，操作成功！store.1
 </body>
 </html>

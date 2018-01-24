@@ -69,9 +69,14 @@ public class StoreController {
 		if(wm.getPageShow() > 0){
 			qm.getPage().setPageShow(wm.getPageShow());
 		}
-		
-		Page dbPage = iservice.getByConditionPage(qm);
-		
+
+		Page dbPage = null;
+		try{
+			dbPage = iservice.getByConditionPage(qm);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
 		//
 		model.addAttribute("wm", wm);
 		model.addAttribute("page", dbPage);

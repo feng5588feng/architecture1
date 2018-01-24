@@ -34,7 +34,7 @@
 		<property name="username">
 			<value>root</value>
 		</property>
-		<property name="password" value="cc" />
+		<property name="password" value="root" />
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
